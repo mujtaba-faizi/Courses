@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>task1</title>
+<style>
+div.car{
+	position: relative;
+	 animation: move 4.0s infinite linear;
+	 animation-direction:alternate;
+	  top: 8px;
+    left: 16px;
+	animation-timing-function:ease-in;
+}
+
+@keyframes move {
+    0%   {left:0px; top:0px;}
+    25%  {left:100px; top:0px; }
+    50%  {left:200px; top:0px;}
+    75%  {left:300px; top:0px;}
+    100% {left:400px; top:0px;}
+}
+
+.wheel{
+	position: absolute;
+	top: 140px;
+	left: 87px;
+	width: 130x;
+	height: 98px;
+}
+
+.wheel .front {
+	position: absolute;
+	-webkit-animation: spin 0.8s infinite linear;
+	animation: spin 0.8s infinite linear;
+	left: 141px;
+	top: -57px;
+	width: 130px;
+	height: 98px;
+	z-index: 1;
+}
+
+@keyframes spin {
+     0% { transform: rotate(0); }
+    100% { transform: rotate(360deg);}
+}
+
+.wheel .rear {
+	position: absolute;
+	-webkit-animation: spin 0.8s infinite linear;
+	animation: spin 0.8s infinite linear;
+	top: -50px;
+	left: -89px;
+	width: 130px;
+	height: 98px;
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="car">
+<img src="HU.png" width="359" height="186" alt="car" />
+<div class="wheel">
+    <div class="rear">
+    <img src="ji.png" width="130" height="98" alt="wheel" /> </div>
+    <div class="front">
+    <img src="ji.png" width="130" height="98" alt="wheel" /> </div>
+</div>
+</div>
+<body>
+</body>
+</html>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.mujtaba.androidclock.MainActivity">
+
+    <Spinner
+        android:id="@+id/timezone"
+        android:layout_width="187dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="66dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/timebuttton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="208dp"
+        android:text="Show Time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="gettime"/>
+
+    <Button
+        android:id="@+id/alarmactivitybutton"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="51dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Add Alarm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timebuttton" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="195dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="88dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/timebuttton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="56dp"
+        android:text="Select Timezone"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

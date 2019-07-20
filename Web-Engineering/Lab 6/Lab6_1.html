@@ -1,0 +1,36 @@
+</head>
+<body>
+<form>
+<h1>Currency Convertor</h1>
+
+Pakistan Rupees : <input type="text" id="pk" onKeyPress="conversion()" />
+<br><br>
+
+Currency: 
+<select id="option">
+  <option value="GB">GB</option>
+  <option value="USD">USD</option>
+  <option value="Euro">Euro</option>
+</select>
+<br>
+<br>
+</form>
+<p>The Result is : <br>
+<p id = "result"></p>
+</p>
+</body>
+<script>
+function conversion()
+{
+        a = document.getElementById("option").value;
+        b = document.getElementById("pk").value;
+		if(a=="GB"){
+        document.getElementById("result").innerHTML = b * 0.0075;}
+		else if(a=="USD"){
+        document.getElementById("result").innerHTML = b * 0.0095;}
+		else if(a=="Euro"){
+		document.getElementById("result").innerHTML = b * 0.0089;}
+}
+
+</script>
+</html>

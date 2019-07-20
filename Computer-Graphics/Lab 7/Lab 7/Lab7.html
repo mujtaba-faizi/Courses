@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+	<meta charset="utf-8"/>
+	<title>Lab 7</title>
+</head>
+
+<body onload="main()">
+	<div style="background-color:lightblue">
+
+  <h3>Rectangular Coordinates:</h3>
+  <p>[-0.7,-0.5,,,,0.5, -0.5,,,,-0.7, 0.5,,,,0.5, 0.5]</p>
+
+  <h3>Colors in rgb:</h3>
+  <p>[	1.0,0.0,0.0,1.0,,,,0.0,1.0,0.0,1.0,,,,0.0,0.0,1.0,1.0,,,,1.0,1.0,1.0,0.0]</p>
+
+  <h3>Interpolation at point (-0.7,0.1) gives color (Check console for verification):</h3>
+  <p>[	0.4 ,0 ,0.6]</p>  
+
+</div>
+	<canvas id="webgl" width="600" height="600">
+		Please use a browser that supports "canvas"
+	</canvas>
+
+	<script id="vertex-shader" type="x-shader/x-vertex">
+		attribute vec4 a_Position;
+		uniform mat4 transformationMatrix;
+		attribute vec4 a_color;
+		varying vec4 colorout;
+		void main(){
+			gl_Position = transformationMatrix * a_Position;
+			gl_PointSize = 10.0;
+			colorout=a_color;
+		}
+	</script>
+
+	<script id="fragment-shader" type="x-shader/x-fragment">
+		precision mediump float;
+		varying vec4 colorout;
+		void main(){
+			gl_FragColor = colorout;
+		}
+	</script>
+
+	<script src="./lib/cuon-utils.js"></script>
+	<script src="./lib/gl-matrix-min.js"></script>
+	<script src="./lib/flatten.js"></script>
+	<script src="./lib/initShaders.js"></script>
+	<script src="./lib/webgl-debug.js"></script>
+	<script src="./lib/webgl-utils.js"></script>  
+	<script src="./lib/dat.gui.min.js"></script>
+	<script src="./lib/modelVewMatrixStack.js"></script>
+	<script src="Lab7.js"></script>
+</body>
+</html>

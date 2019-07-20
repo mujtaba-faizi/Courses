@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<title>Lab07</title>
+
+</head>
+
+<body>
+
+
+<form>
+	
+	<select id="Country" onclick="callFunction(this.value)" onchange="callFunction(this.value)">
+	<option value ="Pakistan">Pakistan</option>
+	<option value ="India">India</option>
+	<option value ="USA">USA</option>	
+	</select>
+    	<select id="City" onclick="callFunction(this.value)" onchange="callFunction(this.value)">
+	<option value ="Pakistan">for (i in obj.Country[0].Cities) {
+    x += obj.Country[0].Cities[i] + "<br>";
+}</option>
+	<option value ="India">India</option>
+	<option value ="USA">USA</option>	
+	</select>
+</form>
+
+<br>
+
+
+<label>Output</label>
+
+<p id ="output" > </p>
+
+
+
+<script type="text/javascript">
+
+var x="";
+var y="";
+var z="";	
+
+var text =	'{ "Country" : [' +
+'{ "Name":"Pakistan","Cities":[ "Rawalpindi", "Islamabad", "Lahore","Peshawar" ]},' +
+'{ "Name":"India","Cities":[ "Mumbai", "Kolkata", "New Delhi","Pune" ]},' +
+'{ "Name":"USA","Cities":[ "Chicago", "New York", "California","Salt Lake" ] } ]}';
+
+obj = JSON.parse(text);
+
+
+function callFunction(a) {
+
+	if( a == "Pakistan"){		
+		
+	document.getElementById("output").innerHTML = x  
+	}
+	else if( a === "India"){		
+	document.getElementById("output").innerHTML = y  
+	}
+	else if( a === "USA"){		
+	document.getElementById("output").innerHTML = z 
+	}	
+}
+
+
+for (i in obj.Country[0].Cities) {
+    x += obj.Country[0].Cities[i] + "<br>";
+}
+
+for (i in obj.Country[1].Cities) {
+    y += obj.Country[1].Cities[i] + "<br>";
+}
+
+for (i in obj.Country[2].Cities) {
+    z += obj.Country[2].Cities[i] + "<br>";
+}
+
+</script>
+
+
+</body>
+
+</html>
+
+
+

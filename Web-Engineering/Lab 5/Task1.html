@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+    body{
+        width: 200%;
+        margin: 0;
+        padding: 0;
+        background-image:url(14a7918fcdf6dc302c80fa10f1a86a7a_XL.jpg);
+		background-repeat:no-repeat;
+        content-align: center;
+    }
+    div.container{
+        width: 90%;
+        margin: 0 5% 0 5%;
+        border: 0 solid #DFDFDF;
+    }
+    .dropdown {
+        position: relative;
+        display: block;
+        background-color: #DFDFDF;
+        padding: 0 5% 0 5%;
+    }
+    div.dropdown a{
+            font-size: 30px;
+            color: #FFFFFF;
+            margin: 15px 0 15px 0;
+            font-family:"Arial Black", Gadget, sans-serif;
+            display: inline-block;
+            text-shadow: 2px 2px 8px gray;
+        }
+    .dropbtn { 
+        cursor: pointer;
+        height: 50px;
+        margin: 5px 0px 5px 0px ;
+        border-radius: 15px;
+        float: right;
+        font-family: inherit;
+        font-size: 20px;
+        color: #FBFBFB;
+        border-bottom: 0;
+        border: 5px; 
+        text-shadow: 2px 2px 8px gray;
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position: relative;
+        background-color: #DFDFDF;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+		height:0px;
+		transition: height 2s ease-in-out;
+		overflow:hidden;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content:hover a {
+        background-color: #AFAFAF;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+		height:300px;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color:#000;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dropdown">
+            <a>IMDB</a>
+            <div class="dropdown-content">
+                <a href="#">TV</a>
+                <a href="#">Movies</a>
+                <a href="#">Celebs</a>
+                <a href="#">Drama</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>\

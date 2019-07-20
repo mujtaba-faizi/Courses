@@ -1,0 +1,44 @@
+</head>
+<body>
+<form>
+<h1>Password</h1>
+
+Enter your password : <input type="text" id="p" onKeyPress="conversion()" />
+<br><br>
+
+
+<br>
+<br>
+</form>
+<p>The Result is : <br>
+<p id = "result"></p>
+</p>
+</body>
+<script>
+function conversion()
+{
+        b = document.getElementById("p").value;
+	res=0;
+	if (b.match(/[1-9]/g)){
+	res++;
+	}
+		if(b.length>7){
+       res++;}
+    if (b.match(/[A-Z]/g) && b.match(/[a-z]/g){
+		res++;
+	}
+	if(b.match(/[*!@#$%^&()_+=]/g)){
+		res++;
+	}
+		
+	if(res==0 || res==1){
+	document.getElementById("result").innerHTML = "bad";}
+	
+}if (res==2){document.getElementById("result").innerHTML = "poor";}
+	if(res==3){document.getElementById("result").innerHTML = "good";}
+	if(res==4){document.getElementById("result").innerHTML = "strong";}
+	
+}
+
+</script>
+</html>

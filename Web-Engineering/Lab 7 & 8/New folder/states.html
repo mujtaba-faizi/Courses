@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Country and State</title>
+</head>
+<body>
+	<fieldset style="width: 230px;">
+		<legend><strong>Make your selection</strong></legend>
+		<p>
+		<form name="test" method="POST" action="processingpage.php">
+			<table>
+				<tr>
+					<td style="text-align: left;">Country:</td>
+					<td style="text-align: left;">
+						<select name="country" id="country" onchange="setStates();">
+							<option value="India">India</option>
+							<option value="Pakistan">Pakistan</option>
+							<option value="USA">USA</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left;">State:</td>
+					<td style="text-align: left;">
+						<select name="state" id="state">
+							<option value="">Please select a Country</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+						<p id="demo"></p>
+	</fieldset>
+
+	<script type="text/javascript">
+		function setStates(){
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+			      document.getElementById("demo").innerHTML = this.responseText;
+					// document.getElementById("state").innerHTML = jsonObj.document.getElementById("country").value;
+					document.getElementById("demo").innerHTML = jsonObj.India;
+				}
+			};
+			xhttp.open("GET", "http://http://localhost/data.json", true);
+			xhttp.send();
+		}
+	</script>
+
+</body>
+</html>

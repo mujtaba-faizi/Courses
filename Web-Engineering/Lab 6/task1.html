@@ -1,0 +1,44 @@
+<html>
+<head>
+<script language="JavaScript">
+
+function conv()
+{
+	var x = document.getElementById("d1").value;
+	var y = document.getElementById("web").value;
+	if (y==1)
+	{
+	 
+         document.getElementById("output").value = x * 0.0089;
+    }
+     else if(y == 2)
+     {
+      
+        document.getElementById("output").value=x * 0.0095; 
+     }
+     else
+      {
+    
+      document.getElementById("output").value= x* 0.0077;
+      }
+  }
+</script>
+
+
+</head>
+<body>
+<form id="converter" oninput="conv()">
+<p>enter the amount in PKR</p>
+<input id="d1" type="number" />
+<br>
+<P>  select the currency </P>
+<select id="web">
+ <option value="1">EURO </option>
+<option value="2">dollar </option>
+<option value="3">pound </option>
+</select>
+<p> OUTPUT</p>
+<input id="output" type= "number" />
+</form>
+</body>
+</html>

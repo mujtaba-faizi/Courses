@@ -1,0 +1,50 @@
+%{
+	#include<stdio.h>
+	#include<stdlib.h>
+
+
+	extern int yylex();
+
+	void yyerror( char *msg);
+%}
+
+
+
+%union {
+	int i;
+	float f;
+}
+
+
+%token <i> INTT
+%token <f> FOLL
+
+
+%% 
+
+S : E		{printf("%d \n", $1); }
+  ;
+
+E : F T 	{}
+  ;
+
+F : INTT	{}
+  | FOLL	{}
+  ;
+
+T : id , T	{}
+  | id
+  ;
+%%
+
+void yyerror( char *msg) {
+
+	fprintf(stderr, "%s\n", msg);
+	exit(1);
+}
+int main()
+{
+	yyparse();
+	return 0;
+}
+

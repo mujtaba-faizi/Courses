@@ -1,0 +1,18 @@
+// {
+// 	"states": [{
+// 		"name": "India",
+// 		"provinces": ["Andhra Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana"]
+// 	}, {
+// 		"name": "Pakistan",
+// 		"provinces": ["Balochistan", "Gilgit Baltistan", "Khaber Pakhtoonkhah", "Punjab", "Sindh"]
+// 	}, {
+// 		"name": "USA",
+// 		"provinces": ["California", "Florida", "New York"]
+// 	}]
+// }
+
+{
+	"India" : ["Andhra Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana"],
+	"Pakistan" : ["Balochistan", "Gilgit Baltistan", "Khaber Pakhtoonkhah", "Punjab", "Sindh"],
+	"USA" : ["California","Florida","New York"]
+}

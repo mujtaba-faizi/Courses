@@ -1,0 +1,46 @@
+<html>
+<head>
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+
+function fun(){
+	//alert("ok");
+	$("#States").removeAttr("disabled");
+	$("#States").attr("enabled","enabled");
+	$.getJSON("http://localhost/states.js", function(result){
+			var a="";
+			//checkCountry = array(3);
+			checkCountry = ["Pak","Ind","US"];
+			for(j=0;j<checkCountry.length;j++)
+            if($("#Country").val()==checkCountry[j]){
+				var c=checkCountry[j];
+				for(i=0;i<result[c].length;i++){					
+				a=a+"<option>"+result[c][i]+"</option>";	
+				}
+				$("#States").html(a);
+			}
+			
+	});
+}
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <p>
+    <label for="Country">Country</label>
+    <select name="Country" id="Country" onchange=fun()>
+      <option value="Pak" selected="selected">Pakistan</option>
+      <option value="Ind">India</option>
+      <option value="US">United States of America</option>
+    </select>
+  </p>
+  <p>
+    <label for="States">States</label>
+    <select name="States" id="States" disabled="disabled">
+    </select>
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

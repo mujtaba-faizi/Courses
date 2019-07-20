@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang = 'en'>
+	<head>
+		<meta charset = "utf-8"/>
+		<title>Interactive Canvas - Draw a point</title>
+		
+		<script src="./lib/webgl-utils.js"></script>
+		<script src="./lib/webgl-debug.js"></script>
+		<script src="./lib/cuon-utils.js"></script>
+		<script src="./lib/initShaders.js"></script>
+		<script src="./lib/dat.gui.min.js"></script>
+		<script src="./lib/gl-matrix-min.js"></script>
+		<script src="./lib/modelVewMatrixStack.js"></script>
+		<script src="./lib/flatten.js"></script>
+		<script src="./lib/asg1_task2.js"></script>
+	</head>
+	
+	<body onload="main()">
+		<canvas id="clickable_canvas" width="512" height="512">
+		Canvas not supported.
+		</canvas>
+			<script id="vertex-shader" type ="x-shader/x-vertex">
+				
+				attribute vec4 a_Position;
+				attribute vec4 properties;
+				
+				void main()	{
+					// distance of vertex from origin
+					float d;
+					
+					// if no twist then simple rotation
+					if(properties.x == 1.0){
+					d = 1.0;
+				}
+				else{
+					// calculates distance of vertex from origin
+					d = sqrt(a_Position.x * a_Position.x + a_Position.y * a_Position.y);
+				}
+					// could not get position coordinates of each vector easily in javascript 
+					// so here is tranformation matrix unrolled
+					vec4 pos = vec4(cos(d*properties.y)*a_Position.x - sin(d*properties.y)*a_Position.y, sin(d*properties.y)*a_Position.x + cos(d*properties.y)*a_Position.y, 0.0, 1.0);
+					gl_Position = pos;
+				}
+			</script>
+			
+			<script id="fragment-shader" type ="x-shader/x-fragment">
+				
+				precision mediump float;
+				
+				void main()	{
+					gl_FragColor = vec4(0.3, 0.9, 0.2, 1.0);
+				}		
+			</script>
+	</body>
+</html>
+
+
+			
+
+		
